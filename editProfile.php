@@ -96,26 +96,26 @@ include "koneksi.php";
               <img src="" id="imageView" class="bg-secondary progilePictureView mt-2 rounded-4">
               <div class="w-40 d-flex flex-column justify-content-start align-items-start gap-1">
                 Gambar Profile Anda sebaiknya memiliki rasio 1:1dan berukuran tidak lebih dari 2MB.
-                <input id="file-upload" type="file" name="profilePicture" accept="image/*" onchange="loadFile(event)" class="w-100" />
+                <input id="file-upload" type="file" name="profilePicture" accept="image/*" onchange="loadFile(event)" class="w-100" required />
               </div>
             </div>
           </div>
 
           <div class="w-100 ">
             <h4 class="mt-2">Nama Lengkap : </h4>
-            <input type="text" class="form-control border-black" placeholder="Nama Lengkap" name="namaLengkap">
+            <input type="text" class="form-control border-black" placeholder="Nama Lengkap" name="namaLengkap" required>
           </div>
           <div class="w-100 ">
             <h4 class="mt-2">Username : </h4>
-            <input type="text" class="form-control border-black" placeholder="Username" name="username">
+            <input type="text" class="form-control border-black" placeholder="Username" name="username" required>
           </div>
           <div class="w-100 ">
             <h4 class="mt-2">Email : </h4>
-            <input type="text" class="form-control border-black" placeholder="Email" name="email">
+            <input type="text" class="form-control border-black" placeholder="Email" name="email" required>
           </div>
           <div class="w-100 ">
             <h4 class="mt-2">Headline : </h4>
-            <input type="text" class="form-control border-black" placeholder="Contoh : Mahasiswa yang suka memasak" name="headline">
+            <input type="text" class="form-control border-black" placeholder="Contoh : Mahasiswa yang suka memasak" name="headline" required>
           </div>
 
 
