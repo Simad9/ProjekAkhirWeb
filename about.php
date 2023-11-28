@@ -2,7 +2,6 @@
 <html>
 
 <head>
-  <!-- TESTING PULL REQUESET -->
   <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,7 +13,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/favicon.png" type="" />
 
-  <title>Dapur Kita | About</title>
+  <title>Dapur Kita | Ini About</title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
