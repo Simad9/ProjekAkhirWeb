@@ -1,0 +1,277 @@
+:root {
+  --text-hitam: #0C0C0C;
+  --text-putih: #FFFFFF;
+  --putih: #F1F2F3;
+  --grey: #222831;
+  --kuning: #FFBE33;
+  --grey2: #979797;
+}
+
+/* INPUT FORM */
+input[type="file"] {
+  border: 2px solid var(--grey);
+  border-radius: 10px;
+
+}
+
+input[type="file"]::file-selector-button {
+  background-color: var(--grey);
+  color: var(--text-putih);
+  border-radius: 10px 0 0 10px;
+  transition: 1s;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: var(--grey2);
+}
+
+/* END INPUT FORM */
+
+/* bg  dan warna*/
+.bg-grey {
+  background-color: var(--grey);
+}
+
+.bg-kuning {
+  background-color: var(--kuning);
+}
+
+.bg-putih {
+  background-color: var(--putih);
+}
+
+.bg-putihbgt {
+  background-color: white;
+}
+
+.text-putih {
+  color: var(--text-putih);
+}
+
+.text-hitam {
+  color: var(--text-hitam);
+}
+
+.text-grey2 {
+  color: var(--grey2);
+}
+
+/* -----  */
+/* BTN */
+.btn-manual {
+  background-color: var(--kuning);
+  padding: 10px 20px;
+  border: 10px;
+  color: var(--text-putih);
+  border-radius: 10px;
+}
+
+.btn-manual:hover {
+  background-color: #e8a71b;
+}
+
+.btn-manual:active {
+  box-shadow: 0 0 7px 4px var(--kuning);
+}
+
+.btn-hapus {
+  background-color: rgb(249, 57, 57);
+  padding: 10px 20px;
+  border: 10px;
+  color: var(--text-putih);
+  border-radius: 10px;
+}
+
+.btn-hapus:hover {
+  background-color: rgb(220, 29, 29);
+}
+
+.btn-hapus:active {
+  box-shadow: 0 0 7px 4px rgb(249, 57, 57);
+}
+
+/* ---- */
+
+.profilePicture {
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.kotak {
+  width: 100%;
+  background-color: var(--putih);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.kotakv3 {
+  width: 100%;
+  background-color: var(--putih);
+  margin-top: 15px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.kotakv2 {
+  width: 100%;
+  height: 50px;
+  background-color: var(--putih);
+  padding: 10px 10px 13px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.garis {
+  width: 100%;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+/* GAMBAR RESEP */
+.gambar-resep {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.gambar-resep-dashboard {
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  object-fit: cover;
+  border-radius: 15px;
+  border-bottom-left-radius: 40px;
+}
+
+.gambar-resep-prev {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* END GAMBAR RESEP */
+
+/* FOTO PROFILE */
+.profileDitulis {
+  width: 75px;
+  height: 75px;
+  background-color: yellow;
+  border-radius: 50%;
+}
+
+.progilePictureView {
+  width: 140px;
+  height: 140px;
+  background-color: var(--grey2);
+}
+
+/* END FOTO PROFILE */
+
+.gambar-card {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+  border-bottom-left-radius: 40px;
+  background: blue;
+}
+
+.border-radius-15px {
+  border-radius: 15px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.bg-login {
+  background-image: url(img/bg-login.png);
+  background-repeat: repeat;
+  transform: scale(103%);
+  background-position: center;
+  overflow: hidden;
+}
+
+.h-100dvh {
+  height: 100dvh;
+}
+
+.text-13px {
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.icons {
+  padding: 5px 10px;
+  background-color: var(--putih);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.forget-hover {
+  color: var(--grey2);
+}
+
+.forget-hover:hover {
+  color: #d2d0d0;
+}
+
+.text-15px {
+  font-size: 15px;
+}
+
+.daftar-login_sekarang {
+  color: var(--text-putih);
+}
+
+.daftar-login_sekarang:hover {
+  color: #bcbbbb;
+}
+
+.item-navigation {
+  width: 100%;
+  border-radius: 10px;
+  padding: 5px;
+  color: var(--text-putih);
+}
+
+.item-navigation:hover {
+  width: 100%;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: var(--kuning);
+  color: var(--text-putih);
+}
+
+.item-navigation.active {
+  width: 100%;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: var(--kuning);
+  color: var(--text-putih);
+}
+
+.card-resep {
+  border-radius: 15px;
+}
+
+.pos-stiky {
+  position: sticky;
+  top: 0;
+}
+
+.z-min10 {
+  z-index: -10;
+}
+
+.w-40{
+  width: 40%;
+}
