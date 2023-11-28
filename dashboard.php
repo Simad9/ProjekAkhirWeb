@@ -90,7 +90,6 @@ include "koneksi.php";
           <h3 class="m-0">Selamat Datang, <?= $_SESSION['username'] ?> </h3>
         </div>
         <div class="akun d-flex gap-2 align-items-center justify-content-center me-2 ">
-          <a class="text-decoration-none text-hitam" href="tambah.php"><i class="bi bi-plus-lg fs-3 cursor-pointer"></i></a>
           <img src="./img/profile/<?= $_SESSION['profilePicture'] ?>" class="profilePicture">
         </div>
       </div>
