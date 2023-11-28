@@ -1,21 +1,32 @@
 <?php
 session_start();
 // menghubungkan dengan koneksi
-$query = new mysqli('localhost', 'root', '', 'projek_akhir_web');
-// menangkap data yang dikirim dari form
-$username = $_POST['username'];
-$password = $_POST['password'];
-// menyeleksi data admin dengan username dan password yang sesuai
-$data = mysqli_query($query, "select * from users where
-username='$username' and password='$password'") or die
-    (mysqli_error($query));
-// menghitung jumlah data yang ditemukan
-$cek = mysqli_num_rows($data);
-if ($cek > 0) {
-    $_SESSION['username'] = $username;
-    $_SESSION['status'] = "login";
-    header("location:../dashboard.php");
-} else {
-    header("location:./login.php?pesan=gagal");
-} ?>
+$konek = new mysqli('localhost', 'root', '', 'projek_akhir_web');
 
+// Check connection
+if ($konek->connect_error) {
+    die("Connection failed: " . $konek->connect_error);
+}
+
+
+// menangkap data yang dikirim dari form
+$username = htmlspecialchars($_POST["username"]);
+$password = htmlspecialchars($_POST['password']);
+
+$query = "SELECT * FROM `users` WHERE username='$username';";
+
+$hasil = mysqli_query($konek, $query);
+$dataAdmin = mysqli_fetch_array($hasil);
+
+
+if (mysqli_num_rows($hasil) === 1) {
+    if (password_verify($password, $dataAdmin["password"])) {
+        $_SESSION['username'] = $dataAdmin['username'];
+        $_SESSION['id_user'] = $dataAdmin['id_user'];
+        $_SESSION['profilePicture'] = $dataAdmin['profilePicture']; //nanti pelajari lagi isinya apa
+        header("location:../dashboard.php");
+        exit;
+    };
+} else {
+    header("location:../login.php?pesan=gagal");
+}
