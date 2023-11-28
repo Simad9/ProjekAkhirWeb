@@ -5,27 +5,28 @@ $konek = new mysqli('localhost', 'root', '', 'projek_akhir_web');
 
 // Check connection
 if ($konek->connect_error) {
-    die("Connection failed: " . $konek->connect_error);
+  die("Connection failed: " . $konek->connect_error);
 }
 
 // Ambil id_user dari session
 $id_user = $_SESSION["id_user"];
 
 // menangkap data yang dikirim dari form
-$judul = htmlspecialchars($_POST["judul"]);
-$bahan_bahan = htmlspecialchars($_POST["bahan_bahan"]);
-$cara_pembuatan = htmlspecialchars($_POST["cara_pembuatan"]);
+$namaLengkap = htmlspecialchars($_POST["namaLengkap"]);
+$username = htmlspecialchars($_POST["username"]);
+$email = htmlspecialchars($_POST["email"]);
+$headline = htmlspecialchars($_POST["headline"]);
 
 // ----- FOTO -------
-$namaFile = $_FILES['foto']['name'];
-$ukuranFile = $_FILES['foto']['size'];
-$error = $_FILES['foto']['error'];
-$tmpNama = $_FILES['foto']['tmp_name'];
+$namaFile = $_FILES['profilePicture']['name'];
+$ukuranFile = $_FILES['profilePicture']['size'];
+$error = $_FILES['profilePicture']['error'];
+$tmpNama = $_FILES['profilePicture']['tmp_name'];
 
 // cek apakah tidak ada gambar yang diupload
 if ($error === 4) {
-    echo "<script> alert('pilih gambar terlebih dahulu!') </script>";
-    return false;
+  echo "<script> alert('pilih gambar terlebih dahulu!') </script>";
+  return false;
 }
 
 // cek apakah yang diupload adalah gambar
@@ -33,14 +34,14 @@ $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
 $ekstensiGambar = explode('.', $namaFile);
 $ekstensiGambar = strtolower(end($ekstensiGambar));
 if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
-    echo "<script> alert('yang anda upload bukan gambar!') </script>";
-    return false;
+  echo "<script> alert('yang anda upload bukan gambar!') </script>";
+  return false;
 }
 
 // cek jika ukurannya terlalu besar
 if ($ukuranFile > 5000000) { //ukuran 5mb
-    echo "<script> alert('ukuran terlalu besar!') </script>";
-    return false;
+  echo "<script> alert('ukuran terlalu besar!') </script>";
+  return false;
 }
 
 // lolos pengecekan, gambar siap diupload
@@ -49,14 +50,18 @@ $namaFileBaru = uniqid(); //generate nama baru
 $namaFileBaru .= '.';
 $namaFileBaru .= $ekstensiGambar;
 
-move_uploaded_file($tmpNama, "../img/resep/" . $namaFileBaru);
+move_uploaded_file($tmpNama, "../img/profile/" . $namaFileBaru);
+
 
 // Bagian masuk ke dbnya
-$query = "INSERT INTO `resep` (`id_resep`, `judul`, `bahan_bahan`, `cara_pembuatan`, `tgl_pembuatan`, `foto`, `id_user`) VALUES ('', '$judul', '$bahan_bahan', '$cara_pembuatan', current_timestamp(), '$namaFileBaru', '$id_user');";
+$query = "UPDATE users SET `username`='$username', `email`='$email',  `headline`='$headline', `profilePicture`='$namaFileBaru', `namaLengkap`='$namaLengkap' WHERE id_user = $id_user;";
 
 $hasil = mysqli_query($konek, $query);
 
 if ($hasil) {
+  // The query executed successfully
+  $_SESSION['username'] = $username;  // Update session username with the new value
+  $_SESSION['profilePicture'] = $namaFileBaru;
   header("location:../dashboard.php");
   exit;
 } else {

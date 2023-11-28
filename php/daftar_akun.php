@@ -9,13 +9,11 @@ $password2 = $_POST["password2"];
 // cek username sudah ada atau belum
 $result = mysqli_query($konek, "SELECT username FROM users WHERE username = '$username'");
 if (mysqli_fetch_assoc($result)) {
-  echo "<script>alert('username sudah terdaftar!')</script>";
   header('location:../login.php?pesan=terdaftar');
 }
 
 // cek konfimrasi password
 if ($password !== $password2) {
-  echo "<script>alert('konfirmasi password tidak sesuai!')</script>";
   header('location:../login.php?pesan=gagal');
 }
 
