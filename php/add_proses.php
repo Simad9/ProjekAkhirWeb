@@ -13,6 +13,7 @@ $id_user = $_SESSION["id_user"];
 
 // menangkap data yang dikirim dari form
 $judul = htmlspecialchars($_POST["judul"]);
+$deskripsi = htmlspecialchars($_POST["deskripsi"]);
 $bahan_bahan = htmlspecialchars($_POST["bahan_bahan"]);
 $cara_pembuatan = htmlspecialchars($_POST["cara_pembuatan"]);
 
@@ -52,7 +53,7 @@ $namaFileBaru .= $ekstensiGambar;
 move_uploaded_file($tmpNama, "../img/resep/" . $namaFileBaru);
 
 // Bagian masuk ke dbnya
-$query = "INSERT INTO `resep` (`id_resep`, `judul`, `bahan_bahan`, `cara_pembuatan`, `tgl_pembuatan`, `foto`, `id_user`) VALUES ('', '$judul', '$bahan_bahan', '$cara_pembuatan', current_timestamp(), '$namaFileBaru', '$id_user');";
+$query = "INSERT INTO `resep` (`id_resep`, `judul`, `deskripsi`, `bahan_bahan`, `cara_pembuatan`, `tgl_pembuatan`, `foto`, `id_user`) VALUES ('', '$judul', '$deskripsi', '$bahan_bahan', '$cara_pembuatan', current_timestamp(), '$namaFileBaru', '$id_user');";
 
 $hasil = mysqli_query($konek, $query);
 

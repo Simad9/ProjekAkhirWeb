@@ -99,6 +99,11 @@ session_start();
             </div>
 
             <div class="w-100">
+              <h4 class="mt-2">Deskripsi Singkat :</h4>
+              <textarea name="deskripsi" class="form-control border-black" placeholder="Deskripsi singkat" style="height: 100px; resize: none"></textarea>
+            </div>
+
+            <div class="w-100">
               <h4 class="mt-2">Bahan-bahan :</h4>
               <textarea name="bahan_bahan" class="form-control border-black" placeholder="Bahan-bahan" style="height: 100px; resize: none"></textarea>
             </div>

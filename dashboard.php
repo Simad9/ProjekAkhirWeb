@@ -113,7 +113,6 @@ include "koneksi.php";
           <section class="food_section layout_padding">
             <div class="filters-content">
               <div class="row grid">
-
                 <div class="col-sm-6 col-lg-4 all pizza border">
                   <div class="box">
                     <div>
@@ -122,12 +121,6 @@ include "koneksi.php";
                       </div>
                       <div class="detail-box">
                         <h5><?= $row['judul']; ?></h5>
-                        <p>
-                          <?= $row['bahan_bahan']; ?>
-                        </p>
-                        <p>
-                          <?= $row['cara_pembuatan']; ?>
-                        </p>
                         <div class="d-flex justify-content-between px-3 py-2">
                           <button class="btn-manual">
                             <i class="bi bi-pencil-square"></i>
