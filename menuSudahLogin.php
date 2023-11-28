@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "koneksi.php";
 ?>
 
@@ -40,7 +41,7 @@ include "koneksi.php";
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.php">Home </a>
+                <a class="nav-link" href="homepage.php">Home </a>
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="menu.php">Menu <span class="sr-only">(current)</span>
@@ -53,7 +54,9 @@ include "koneksi.php";
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="login.php" class="order_online"> Login </a>
+
+              <a href="dashboard.php"> <img src="./img/profile/<?= $_SESSION['profilePicture'] ?>" class="profilePicture"> </a>
+
             </div>
           </div>
         </nav>

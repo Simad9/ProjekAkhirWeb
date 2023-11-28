@@ -24,7 +24,7 @@ if (mysqli_num_rows($hasil) === 1) {
         $_SESSION['username'] = $dataAdmin['username'];
         $_SESSION['id_user'] = $dataAdmin['id_user'];
         $_SESSION['profilePicture'] = $dataAdmin['profilePicture']; //nanti pelajari lagi isinya apa
-        header("location:../dashboard.php");
+        header("location:../homepage.php");
         exit;
     };
 } else {

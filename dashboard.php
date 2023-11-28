@@ -40,7 +40,7 @@ include "koneksi.php";
   <section class="d-flex h-100dvh ">
     <!-- NAVBAR -->
     <div class="kiri col-3 bg-grey d-flex flex-column justify-content-center position-fixed h-100">
-      <a href="index.php">
+      <a href="homepage.php">
         <h3 class="text-center text-putih mt-5 mb-4">Dapur Kita</h3>
       </a>
       <div class="p-2 mt-2 d-flex flex-column justify-content-between h-100">
