@@ -1,7 +1,5 @@
 <?php
 session_start();
-$apapun = "oke";
-echo $apapun;
 ?>
 <!DOCTYPE html>
 <html lang="en">
