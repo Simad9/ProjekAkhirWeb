@@ -1,3 +1,10 @@
+<?php
+session_start();
+include "koneksi.php";
+?>
+
+<!-- SUDAH LOGIN -->
+
 <!DOCTYPE html>
 <html>
 
@@ -9,7 +16,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/favicon.png" type="" />
-  <title>Dapur Kita </title>
+  <title>Dapur Kita | Homepage</title>
 
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
@@ -34,22 +41,26 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="menu.php">Menu</a>
+                <a class="nav-link" href="menuSudahLogin.php">Menu</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#about">About</a>
               </li>
             </ul>
+
             <div class="user_option">
               <form class="form-inline">
                 <button class="btn my-2 my-sm-0 nav_search-btn" type="submit">
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="login.php" class="order_online"> Login </a>
+
+              <a href="dashboard.php"> <img src="./img/profile/<?= $_SESSION['profilePicture'] ?>" class="profilePicture"> </a>
+
+
             </div>
           </div>
         </nav>
@@ -76,7 +87,7 @@
                       bagian dari perjalanan kuliner yang menggembirakan.
                     </p>
                     <div class="btn-box">
-                      <a href="menu.php" class="btn1"> Jelajahi </a>
+                      <a href="menuSudahLogin.php" class="btn1"> Jelajahi </a>
                     </div>
                   </div>
                 </div>
