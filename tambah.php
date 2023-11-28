@@ -1,7 +1,7 @@
 <?php
 session_start();
-$test = "ini testing";
-echo $test;
+$apapun = "oke";
+echo $apapun;
 ?>
 <!DOCTYPE html>
 <html lang="en">
