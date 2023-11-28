@@ -1,5 +1,7 @@
 <?php
 session_start();
+$test = "ini testing";
+echo $test;
 ?>
 <!DOCTYPE html>
 <html lang="en">
