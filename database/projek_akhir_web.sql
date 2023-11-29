@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2023 at 11:29 AM
+-- Generation Time: Nov 29, 2023 at 04:58 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -43,10 +43,11 @@ CREATE TABLE `resep` (
 --
 
 INSERT INTO `resep` (`id_resep`, `judul`, `deskripsi`, `bahan_bahan`, `cara_pembuatan`, `tgl_pembuatan`, `foto`, `id_user`) VALUES
-(1, 'Es teh', '', 'es', 'seduh air', '2023-11-27', '', 1),
+(1, 'Es teh', 'Ini Deskripsi teh', 'es', 'seduh air', '2023-11-27', '', 1),
 (2, 'Lemper', '', '500 gram beras ketan', 'Rendam beras ketan minimal 1 jam (saya 18 jam karena proses masak mengalami delay 🤭🤭🤭. Tapi diganti air rendamannya agar tidak bau)', '2023-11-28', '', 10),
-(3, 'Lemper', '', 'Nasi', 'Ini dia caranya', '2023-11-28', '6565a5d72f9ed.jpg', 12),
-(4, 'test', '', 'test', 'test', '2023-11-28', '6565bd7d41666.png', 13);
+(3, 'Lemper', 'Deskripsi Lemper', 'Nasi', 'Ini dia caranya', '2023-11-28', '6565a5d72f9ed.jpg', 12),
+(4, 'test', '', 'test', 'test', '2023-11-28', '6565bd7d41666.png', 13),
+(5, 'Cendol Enak', 'Saya gak jago bikin cendol tapi saya mencoba', 'Katanya sih tepung', 'Saya cari google\r\n', '2023-11-29', '6566b4cb447d2.webp', 12);
 
 -- --------------------------------------------------------
 
@@ -98,7 +99,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `resep`
 --
 ALTER TABLE `resep`
-  MODIFY `id_resep` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_resep` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
