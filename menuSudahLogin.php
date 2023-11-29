@@ -44,11 +44,11 @@ include "koneksi.php";
                 <a class="nav-link" href="homepage.php">Home </a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="menu.php">Menu <span class="sr-only">(current)</span>
+                <a class="nav-link" href="menuSudahLogin.php">Menu <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link" href="about.php">About</span>
+                <a class="nav-link" href="aboutSudahLogin.php">About</span>
                 </a>
               </li>
             </ul>
@@ -63,7 +63,7 @@ include "koneksi.php";
               <a href="dashboard.php"> <img src="./img/profile/<?= $_SESSION['profilePicture'] ?>" class="profilePicture"> </a>
 
             </div>
-            
+
           </div>
         </nav>
       </div>
