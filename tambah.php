@@ -91,7 +91,7 @@ session_start();
                   <input id="file-upload" name="foto" type="file" accept="image/*" onchange="loadFile(event)" class="ms-3" />
                 </div>
               </div>
-              <img src="" id="imageView" class="bg-secondary gambar-resep-prev mt-2 rounded-4" />
+              <img src="./img/resep-dummy.png" id="imageView" class="bg-secondary gambar-resep-prev mt-2 rounded-4" />
             </div>
 
             <div class="w-100">

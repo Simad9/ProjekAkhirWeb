@@ -1,6 +1,5 @@
 <?php
 session_start();
-include "koneksi.php";
 ?>
 
 <!DOCTYPE html>
@@ -93,8 +92,8 @@ include "koneksi.php";
         <form action="./php/editProfile.php" method="post" enctype="multipart/form-data" class="resep d-flex flex-wrap justify-content-start gap-2 mx-2">
           <div class="w-75 d-flex flex-column align-items-start">
             <h4 class="mt-2">Foto Profile : </h4>
-            <div class="d-flex justify-content-start align-items-center gap-2">
-              <img src="" id="imageView" class="bg-secondary progilePictureView mt-2 rounded-4">
+            <div class="d-flex justify-content-start align-items-center gap-3">
+              <img src="./img/profile/<?= $_SESSION['profilePicture'] ?>" id="imageView" class="bg-secondary progilePictureView mt-2 rounded-4">
               <div class="w-40 d-flex flex-column justify-content-start align-items-start gap-1">
                 Gambar Profile Anda sebaiknya memiliki rasio 1:1dan berukuran tidak lebih dari 2MB.
                 <input id="file-upload" type="file" name="profilePicture" accept="image/*" onchange="loadFile(event)" class="w-100" required />
@@ -102,21 +101,28 @@ include "koneksi.php";
             </div>
           </div>
 
+          <?php
+          $konek = new mysqli('localhost', 'root', '', 'projek_akhir_web');
+          $id_user = $_SESSION['id_user'];
+          $hasil = mysqli_query($konek, "SELECT * FROM users WHERE id_user =  $id_user");
+          $data = mysqli_fetch_array($hasil);
+          ?>
+
           <div class="w-100 ">
             <h4 class="mt-2">Nama Lengkap : </h4>
-            <input type="text" class="form-control border-black" placeholder="Nama Lengkap" name="namaLengkap" required>
+            <input type="text" class="form-control border-black" placeholder="Nama Lengkap" name="namaLengkap" value="<?= $data['namaLengkap'] ?> " required>
           </div>
           <div class="w-100 ">
             <h4 class="mt-2">Username : </h4>
-            <input type="text" class="form-control border-black" placeholder="Username" name="username" required>
+            <input type="text" class="form-control border-black" placeholder="Username" name="username" value="<?= $data['username'] ?>">
           </div>
           <div class="w-100 ">
             <h4 class="mt-2">Email : </h4>
-            <input type="text" class="form-control border-black" placeholder="Email" name="email" required>
+            <input type="email" class="form-control border-black" placeholder="Email" name="email" value="<?= $data['email'] ?>">
           </div>
           <div class="w-100 ">
             <h4 class="mt-2">Headline : </h4>
-            <input type="text" class="form-control border-black" placeholder="Contoh : Mahasiswa yang suka memasak" name="headline" required>
+            <input type="text" class="form-control border-black" placeholder="Contoh : Mahasiswa yang suka memasak" name="headline" value="<?= $data['headline'] ?>" required>
           </div>
 
 

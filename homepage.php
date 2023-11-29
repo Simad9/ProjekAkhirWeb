@@ -24,6 +24,8 @@ include "koneksi.php";
   <link href="css/font-awesome.min.css" rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet" />
   <link href="css/responsive.css" rel="stylesheet" />
+  <!-- CSS SENDIRI -->
+  <link href="style.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -57,9 +59,7 @@ include "koneksi.php";
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-
               <a href="dashboard.php"> <img src="./img/profile/<?= $_SESSION['profilePicture'] ?>" class="profilePicture"> </a>
-
 
             </div>
           </div>
