@@ -1,12 +1,14 @@
 # ProjekAkhirWeb
+
 Deskripsi
 
 ### To do - 29/11/2023 :
-- [ ] Edit resep
+
+- [x] Edit resep
 - [x] Hapus resep
 - [x] detail resep
-- [ ] Halaman Login dan register, tagline websitenya
-- [ ] Halaman menu, nyusun resep makanan
-- [ ] card belum jadi
+- [x] Halaman menu, nyusun resep makanan
+- [x] card belum jadi
+- [ ] Halaman Login dan register ~ tagline websitenya
 - [ ] rapiin desain yang salah kecil kecil
 - [ ] Menyusun Laporan (hehe)

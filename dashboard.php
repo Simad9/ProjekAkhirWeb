@@ -121,10 +121,12 @@ include "koneksi.php";
                       <div class="detail-box">
                         <h5><?= $row['judul']; ?></h5>
                         <div class="d-flex justify-content-between px-3 py-2">
-                          <button class="btn-manual">
-                            <i class="bi bi-pencil-square"></i>
-                            Edit
-                          </button>
+                          <a href="./editResep.php?id_resep=<?= $row['id_resep']; ?>">
+                            <button class="btn-manual">
+                              <i class="bi bi-pencil-square"></i>
+                              Edit
+                            </button>
+                          </a>
                           <a href="./php/hapus.php?id_resep=<?= $row['id_resep']; ?>">
                             <button class="btn-hapus">
                               <i class="bi bi-trash"></i>
