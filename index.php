@@ -121,7 +121,7 @@ include "koneksi.php";
                 <h5><?= $row['judul'] ?></h5>
                 <p><?= $row['deskripsi'] ?></p>
                 <div class="btn-box">
-                  <a href="detail.php?id_resep=<?= $row['id_resep'] ?>" class="btn1"> Lanjut Baca </a>
+                  <a href="detailBelumLogin.php?id_resep=<?= $row['id_resep'] ?>" class="btn1"> Lanjut Baca </a>
                 </div>
               </div>
             </div>
@@ -164,7 +164,6 @@ include "koneksi.php";
               tentang berbagai bahan makanan, Dapur Kita adalah panduan
               lengkap Anda.
             </p>
-            <a href=""> Read More </a>
           </div>
         </div>
       </div>
