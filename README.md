@@ -7,7 +7,7 @@ Deskripsi
 - [ ] Edit resep
 - [x] Hapus resep
 - [x] detail resep
-- [ ] Halaman Login dan register, tagline websitenya
+- [x] Halaman Login dan register, tagline websitenya
 - [ ] Halaman menu, nyusun resep makanan
 - [x] card belum jadi
 - [ ] rapiin desain yang salah kecil kecil
