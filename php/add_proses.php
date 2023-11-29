@@ -5,7 +5,7 @@ $konek = new mysqli('localhost', 'root', '', 'projek_akhir_web');
 
 // Check connection
 if ($konek->connect_error) {
-    die("Connection failed: " . $konek->connect_error);
+  die("Connection failed: " . $konek->connect_error);
 }
 
 // Ambil id_user dari session
@@ -25,23 +25,23 @@ $tmpNama = $_FILES['foto']['tmp_name'];
 
 // cek apakah tidak ada gambar yang diupload
 if ($error === 4) {
-    echo "<script> alert('pilih gambar terlebih dahulu!') </script>";
-    return false;
+  echo "<script> alert('pilih gambar terlebih dahulu!') </script>";
+  return false;
 }
 
 // cek apakah yang diupload adalah gambar
-$ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+$ekstensiGambarValid = ['jpg', 'jpeg', 'png', 'webp'];
 $ekstensiGambar = explode('.', $namaFile);
 $ekstensiGambar = strtolower(end($ekstensiGambar));
 if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
-    echo "<script> alert('yang anda upload bukan gambar!') </script>";
-    return false;
+  echo "<script> alert('yang anda upload bukan gambar!') </script>";
+  return false;
 }
 
 // cek jika ukurannya terlalu besar
 if ($ukuranFile > 5000000) { //ukuran 5mb
-    echo "<script> alert('ukuran terlalu besar!') </script>";
-    return false;
+  echo "<script> alert('ukuran terlalu besar!') </script>";
+  return false;
 }
 
 // lolos pengecekan, gambar siap diupload
@@ -63,4 +63,3 @@ if ($hasil) {
 } else {
   echo "<script>alert('Gagal Update Profile')</script>";
 }
-

@@ -12,6 +12,9 @@ include "koneksi.php";
   <title>Detail</title>
 
   <!-- Tamplate -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
   <link href="css/font-awesome.min.css" rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet" />
   <link href="css/responsive.css" rel="stylesheet" />
@@ -31,14 +34,12 @@ include "koneksi.php";
   <nav class="navbar bg-grey py-2 px-5 shadow-lg d-flex align-items-center">
     <h3 class="navbar-brand text-putih">Dapur Kita</h3>
     <div class="d-flex gap-2">
-      <a class="text-decoration-none text-light nav-item" href="homepage.php">Home</a>
-      <a class="text-decoration-none text-light nav-item" href="menuSudahLogin.php">Menu</a>
+      <a class="text-decoration-none text-light nav-item" href="index.php">Home</a>
+      <a class="text-decoration-none text-light nav-item" href="menu.php">Menu</a>
     </div>
     <div class="d-flex justify-content-center align-items-center gap-3">
       <i class="bi bi-search fs-5 text-putih"></i>
-      <a href="dashboard.php">
-        <img src="img/profile/<?= $_SESSION['profilePicture'] ?>" alt="" class="profilePicture">
-      </a>
+      <a href="login.php" class="order_online"> Login </a>
     </div>
   </nav>
   <!-- END NAVBAR -->
@@ -46,9 +47,8 @@ include "koneksi.php";
   <!-- Main Section -->
   <?php
   $id_resep = $_GET["id_resep"];
-  $id_user = $_SESSION['id_user'];
 
-  $query = "SELECT * FROM users u, resep r WHERE u.id_user = r.id_user AND r.id_resep = $id_resep AND r.id_user = $id_user";
+  $query = "SELECT * FROM users u, resep r WHERE u.id_user = r.id_user AND r.id_resep = $id_resep";
 
 
   $hasil = mysqli_query($konek, $query);
