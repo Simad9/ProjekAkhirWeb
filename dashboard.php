@@ -125,10 +125,12 @@ include "koneksi.php";
                             <i class="bi bi-pencil-square"></i>
                             Edit
                           </button>
-                          <button class="btn-hapus">
-                            <i class="bi bi-trash"></i>
-                            Hapus
-                          </button>
+                          <a href="./php/hapus.php?id_resep=<?= $row['id_resep']; ?>">
+                            <button class="btn-hapus">
+                              <i class="bi bi-trash"></i>
+                              Hapus
+                            </button>
+                          </a>
                         </div>
                       </div>
                     </div>
