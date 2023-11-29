@@ -101,80 +101,47 @@ include "koneksi.php";
   </div>
 
   <!-- food section -->
-  <section class="food_section layout_padding-bottom">
-    <div class="container">
-      <div class="heading_container heading_center" style="margin-top: 50px">
-        <h2>Recipes</h2>
-      </div>
+  <section class="food_section layout_padding d-flex justify-content-center">
 
-      <br>
+  <div class="container">
 
-      <div class="filters-content">
-        <div class="row grid">
-          <div class="col-sm-6 col-lg-4 all pizza">
-            <div class="box">
-              <div>
-                <div class="img-box">
-                  <img src="images/f1.png" alt="" />
-                </div>
-                <div class="detail-box">
-                  <h5>Delicious Pizza</h5>
-                  <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo,
-                    quisquam velit, magnam voluptatem repellendus sed eaque
-                  </p>
-                  <div class="btn-box">
-                    <a href="#" class="btn1"> Read More </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4 all burger">
-            <div class="box">
-              <div>
-                <div class="img-box">
-                  <img src="images/f2.png" alt="" />
-                </div>
-                <div class="detail-box">
-                  <h5>Delicious Burger</h5>
-                  <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo,
-                    quisquam velit, magnam voluptatem repellendus sed eaque
-                  </p>
-                  <div class="btn-box">
-                    <a href="#" class="btn1"> Read More </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4 all pizza">
-            <div class="box">
-              <div>
-                <div class="img-box">
-                  <img src="images/f3.png" alt="" />
-                </div>
-                <div class="detail-box">
-                  <h5>Delicious Pizza</h5>
-                  <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo,
-                    quisquam velit, magnam voluptatem repellendus sed eaque
-                  </p>
-                  <div class="btn-box">
-                    <a href="#" class="btn1"> Read More </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="btn-box">
-        <a href="menu.php"> More Recipes? </a>
-      </div>
+    <div class="heading_container text-center">
+      <h2>Recipes</h2>
     </div>
-  </section>
+
+    <div class="row">
+      <!-- CARD -->
+      <?php
+      $query = mysqli_query($konek, "SELECT * FROM resep");
+      while ($row = mysqli_fetch_array($query)) {
+      ?>
+        <div class="col-sm-6 col-lg-4">
+
+          <div class="box">
+            <div>
+              <div class="img-box">
+                <img src="./img/resep/<?= $row['foto'] ?>" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5><?= $row['judul'] ?></h5>
+                <p><?= $row['deskripsi'] ?></p>
+                <div class="btn-box">
+                  <a href="detail.php?id_resep=<?= $row['id_resep'] ?>" class="btn1"> Lanjut Baca </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      <?php } ?>
+    </div>
+
+    <div class="text-center btn-box">
+      <a href=""> View More </a>
+    </div>
+
+  </div>
+</section>
 
   <!-- end food section -->
 

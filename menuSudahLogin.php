@@ -67,48 +67,48 @@ include "koneksi.php";
 
   <!-- food section -->
 
-  <section class="food_section layout_padding">
+  <section class="food_section layout_padding d-flex justify-content-center">
 
-    <div class="container">
+  <div class="container">
 
-      <div class="heading_container heading_center" style="margin-top: -50px">
-        <h2>Recipes</h2>
-      </div>
+    <div class="heading_container text-center">
+      <h2>Recipes</h2>
+    </div>
 
-      <br>
+    <div class="row">
       <!-- CARD -->
       <?php
       $query = mysqli_query($konek, "SELECT * FROM resep");
       while ($row = mysqli_fetch_array($query)) {
       ?>
-        <div class="filters-content ">
-          <div class="row grid">
-            <div class="col-sm-6 col-lg-4 all">
+        <div class="col-sm-6 col-lg-4">
 
-              <div class="box">
-                <div>
-                  <div class="img-box">
-                    <img src="./img/resep/<?= $row['foto'] ?>" alt="" />
-                  </div>
-                  <div class="detail-box">
-                    <h5><?= $row['judul'] ?></h5>
-                    <p><?= $row['deskripsi'] ?></p>
-                    <div class="btn-box">
-                      <a href="detail.php?id_resep=<?= $row['id_resep'] ?>" class="btn1"> Lanjut Baca </a>
-                    </div>
-                  </div>
+          <div class="box">
+            <div>
+              <div class="img-box">
+                <img src="./img/resep/<?= $row['foto'] ?>" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5><?= $row['judul'] ?></h5>
+                <p><?= $row['deskripsi'] ?></p>
+                <div class="btn-box">
+                  <a href="detail.php?id_resep=<?= $row['id_resep'] ?>" class="btn1"> Lanjut Baca </a>
                 </div>
               </div>
-
             </div>
           </div>
+
         </div>
       <?php } ?>
-      <div class="btn-box">
-        <a href=""> View More </a>
-      </div>
     </div>
-  </section>
+
+    <div class="text-center btn-box">
+      <a href=""> View More </a>
+    </div>
+
+  </div>
+</section>
+
 
   <!-- end food section -->
 

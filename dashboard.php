@@ -109,10 +109,10 @@ include "koneksi.php";
         while ($row = mysqli_fetch_array($query)) {
         ?>
 
-          <section class="food_section layout_padding">
+          <section class="food_section layout_padding d-inline-flex p-2">
             <div class="filters-content">
               <div class="row grid">
-                <div class="col-sm-6 col-lg-4 all pizza border">
+                <div class="col-sm-6 col-lg-12 all pizza border">
                   <div class="box">
                     <div>
                       <div class="img-box">
