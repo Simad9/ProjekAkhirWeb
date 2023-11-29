@@ -44,7 +44,7 @@ include "koneksi.php";
                 <a class="nav-link" href="menu.php">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#about">About</a>
+                <a class="nav-link" href="about.php">About</a>
               </li>
             </ul>
 
@@ -164,7 +164,7 @@ include "koneksi.php";
               tentang berbagai bahan makanan, Dapur Kita adalah panduan
               lengkap Anda.
             </p>
-            <a href=""> Read More </a>
+            <a href="about.php"> Read More </a>
           </div>
         </div>
       </div>

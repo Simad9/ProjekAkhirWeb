@@ -46,6 +46,10 @@ include "koneksi.php";
                 <a class="nav-link" href="menu.php">Menu <span class="sr-only">(current)</span>
                 </a>
               </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="about.php">About </span>
+                </a>
+              </li>
             </ul>
             <div class="user_option">
               <form class="form-inline">
@@ -66,45 +70,45 @@ include "koneksi.php";
 
   <section class="food_section layout_padding d-flex justify-content-center">
 
-<div class="container">
+    <div class="container">
 
-  <div class="heading_container text-center">
-    <h2>Recipes</h2>
-  </div>
+      <div class="heading_container text-center">
+        <h2>Recipes</h2>
+      </div>
 
-  <div class="row">
-    <!-- CARD -->
-    <?php
-    $query = mysqli_query($konek, "SELECT * FROM resep");
-    while ($row = mysqli_fetch_array($query)) {
-    ?>
-      <div class="col-sm-6 col-lg-4">
+      <div class="row">
+        <!-- CARD -->
+        <?php
+        $query = mysqli_query($konek, "SELECT * FROM resep");
+        while ($row = mysqli_fetch_array($query)) {
+        ?>
+          <div class="col-sm-6 col-lg-4">
 
-        <div class="box">
-          <div>
-            <div class="img-box">
-              <img src="./img/resep/<?= $row['foto'] ?>" alt="" />
-            </div>
-            <div class="detail-box">
-              <h5><?= $row['judul'] ?></h5>
-              <p><?= $row['deskripsi'] ?></p>
-              <div class="btn-box">
-                <a href="detailBelumLogin.php?id_resep=<?= $row['id_resep'] ?>" class="btn1"> Lanjut Baca </a>
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="./img/resep/<?= $row['foto'] ?>" alt="" />
+                </div>
+                <div class="detail-box">
+                  <h5><?= $row['judul'] ?></h5>
+                  <p><?= $row['deskripsi'] ?></p>
+                  <div class="btn-box">
+                    <a href="detailBelumLogin.php?id_resep=<?= $row['id_resep'] ?>" class="btn1"> Lanjut Baca </a>
+                  </div>
+                </div>
               </div>
             </div>
+
           </div>
-        </div>
-
+        <?php } ?>
       </div>
-    <?php } ?>
-  </div>
 
-  <div class="text-center btn-box">
-    <a href=""> View More </a>
-  </div>
+      <div class="text-center btn-box">
+        <a href=""> View More </a>
+      </div>
 
-</div>
-</section>
+    </div>
+  </section>
 
   <!-- end food section -->
 

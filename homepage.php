@@ -47,7 +47,7 @@ include "koneksi.php";
                 <a class="nav-link" href="menuSudahLogin.php">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#about">About</a>
+                <a class="nav-link" href="aboutSudahLogin.php">About</a>
               </li>
             </ul>
 
@@ -103,45 +103,45 @@ include "koneksi.php";
   <!-- food section -->
   <section class="food_section layout_padding d-flex justify-content-center">
 
-  <div class="container">
+    <div class="container">
 
-    <div class="heading_container text-center">
-      <h2>Recipes</h2>
-    </div>
+      <div class="heading_container text-center">
+        <h2>Recipes</h2>
+      </div>
 
-    <div class="row">
-      <!-- CARD -->
-      <?php
-      $query = mysqli_query($konek, "SELECT * FROM resep");
-      while ($row = mysqli_fetch_array($query)) {
-      ?>
-        <div class="col-sm-6 col-lg-4">
+      <div class="row">
+        <!-- CARD -->
+        <?php
+        $query = mysqli_query($konek, "SELECT * FROM resep");
+        while ($row = mysqli_fetch_array($query)) {
+        ?>
+          <div class="col-sm-6 col-lg-4">
 
-          <div class="box">
-            <div>
-              <div class="img-box">
-                <img src="./img/resep/<?= $row['foto'] ?>" alt="" />
-              </div>
-              <div class="detail-box">
-                <h5><?= $row['judul'] ?></h5>
-                <p><?= $row['deskripsi'] ?></p>
-                <div class="btn-box">
-                  <a href="detail.php?id_resep=<?= $row['id_resep'] ?>" class="btn1"> Lanjut Baca </a>
+            <div class="box">
+              <div>
+                <div class="img-box">
+                  <img src="./img/resep/<?= $row['foto'] ?>" alt="" />
+                </div>
+                <div class="detail-box">
+                  <h5><?= $row['judul'] ?></h5>
+                  <p><?= $row['deskripsi'] ?></p>
+                  <div class="btn-box">
+                    <a href="detail.php?id_resep=<?= $row['id_resep'] ?>" class="btn1"> Lanjut Baca </a>
+                  </div>
                 </div>
               </div>
             </div>
+
           </div>
+        <?php } ?>
+      </div>
 
-        </div>
-      <?php } ?>
+      <div class="text-center btn-box">
+        <a href=""> View More </a>
+      </div>
+
     </div>
-
-    <div class="text-center btn-box">
-      <a href=""> View More </a>
-    </div>
-
-  </div>
-</section>
+  </section>
 
   <!-- end food section -->
 
@@ -169,7 +169,7 @@ include "koneksi.php";
               tentang berbagai bahan makanan, Dapur Kita adalah panduan
               lengkap Anda.
             </p>
-            <a href=""> Read More </a>
+            <a href="about.php"> Read More </a>
           </div>
         </div>
       </div>
