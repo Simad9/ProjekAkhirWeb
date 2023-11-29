@@ -37,10 +37,16 @@ include "koneksi.php";
       <a class="text-decoration-none text-light nav-item" href="index.php">Home</a>
       <a class="text-decoration-none text-light nav-item" href="menu.php">Menu</a>
     </div>
-    <div class="d-flex justify-content-center align-items-center gap-3">
-      <i class="bi bi-search fs-5 text-putih"></i>
+
+    <div class="user_option">
+      <form class="form-inline">
+        <button class="btn my-2 my-sm-0 nav_search-btn" type="submit">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+      </form>
       <a href="login.php" class="order_online"> Login </a>
     </div>
+
   </nav>
   <!-- END NAVBAR -->
 

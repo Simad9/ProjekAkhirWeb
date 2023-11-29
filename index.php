@@ -47,6 +47,7 @@ include "koneksi.php";
                 <a class="nav-link" href="#about">About</a>
               </li>
             </ul>
+
             <div class="user_option">
               <form class="form-inline">
                 <button class="btn my-2 my-sm-0 nav_search-btn" type="submit">
@@ -55,6 +56,7 @@ include "koneksi.php";
               </form>
               <a href="login.php" class="order_online"> Login </a>
             </div>
+            
           </div>
         </nav>
       </div>
