@@ -21,8 +21,8 @@
 <body class="bg-login h-100dvh">
   <div class="d-flex bg-login h-100">
     <div class=" kiri col-7 d-flex flex-column justify-content-center align-items-center text-light">
-      <h1>Dapur</h1>
-      <p>tagline</p>
+      <h2>Mari bergabung di Dapur Kita!</h2>
+      <p>Menjelajahi Rasa, Membagikan Kreativitas.</p>
     </div>
     <div class="kanan col-5 d-flex flex-column justify-content-center align-items-center text-light">
       <div class="card bg-grey p-3 text-putih w-75">
