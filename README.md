@@ -9,6 +9,6 @@ Deskripsi
 - [x] detail resep
 - [x] Halaman menu, nyusun resep makanan
 - [x] card belum jadi
-- [ ] Halaman Login dan register ~ tagline websitenya
+- [x] Halaman Login dan register ~ tagline websitenya
 - [ ] rapiin desain yang salah kecil kecil
 - [ ] Menyusun Laporan (hehe)

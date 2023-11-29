@@ -1,33 +1,46 @@
 <?php
-include "koneksi.php";
+session_start();
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
+  <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/favicon.png" type="" />
-  <title>Dapur Kita </title>
 
+  <title>Dapur Kita | About</title>
+
+  <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!--owl slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- nice select  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+  <!-- font awesome style -->
   <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 </head>
 
-<body>
+<body class="sub_page">
   <div class="hero_area">
     <div class="bg-box">
       <img src="images/hero-bg.jpg" alt="" />
     </div>
+    <!-- header section strats -->
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container">
@@ -35,114 +48,46 @@ include "koneksi.php";
             <span> Dapur Kita </span>
           </a>
 
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- KALO BELUM LOGIn -->
             <ul class="navbar-nav mx-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+              <li class="nav-item">
+                <a class="nav-link" href="index.php">Home </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="menu.php">Menu</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.php">About</a>
+              <li class="nav-item active">
+                <a class="nav-link" href="about.php">About <span class="sr-only">(current)</span>
+                </a>
               </li>
             </ul>
 
+            <!-- KALO BELUM LOGIn -->
             <div class="user_option">
               <form class="form-inline">
                 <button class="btn my-2 my-sm-0 nav_search-btn" type="submit">
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="login.php" class="order_online"> Login </a>
+              <a href="login.php" class="order_online">Login </a>
             </div>
+
 
           </div>
         </nav>
       </div>
     </header>
     <!-- end header section -->
-    <!-- slider section -->
-    <section class="slider_section">
-      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-7 col-lg-6">
-                  <div class="detail-box">
-                    <h1>WELCOME</h1>
-                    <p style="text-align: justify">
-                      Selamat datang di Dapur Kita, tempat di mana kreasi
-                      kuliner menjadi keajaiban! Dapur Kita adalah sumber
-                      inspirasi utama untuk pencinta masak, baik pemula maupun
-                      koki berpengalaman. Kami memahami bahwa dapur bukan
-                      hanya tempat memasak, tetapi juga ladang kreativitas di
-                      mana setiap bahan dan setiap langkah memasak menjadi
-                      bagian dari perjalanan kuliner yang menggembirakan.
-                    </p>
-                    <div class="btn-box">
-                      <a href="menu.php" class="btn1"> Jelajahi </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- end slider section -->
   </div>
-
-  <!-- food section -->
-  <section class="food_section layout_padding d-flex justify-content-center">
-
-    <div class="container">
-
-      <div class="heading_container text-center">
-        <h2>Recipes</h2>
-      </div>
-
-      <div class="row">
-        <!-- CARD -->
-        <?php
-        $query = mysqli_query($konek, "SELECT * FROM resep");
-        while ($row = mysqli_fetch_array($query)) {
-        ?>
-          <div class="col-sm-6 col-lg-4">
-
-            <div class="box">
-              <div>
-                <div class="img-box">
-                  <img src="./img/resep/<?= $row['foto'] ?>" alt="" />
-                </div>
-                <div class="detail-box">
-                  <h5><?= $row['judul'] ?></h5>
-                  <p><?= $row['deskripsi'] ?></p>
-                  <div class="btn-box">
-                    <a href="detailBelumLogin.php?id_resep=<?= $row['id_resep'] ?>" class="btn1"> Lanjut Baca </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        <?php } ?>
-      </div>
-
-      <div class="text-center btn-box">
-        <a href="menu.php"> Read More Recipe </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- end food section -->
 
   <!-- about section -->
 
-  <section class="about_section layout_padding" id="about">
+  <section class="about_section layout_padding">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
@@ -164,7 +109,6 @@ include "koneksi.php";
               tentang berbagai bahan makanan, Dapur Kita adalah panduan
               lengkap Anda.
             </p>
-            <a href="about.php"> Read More </a>
           </div>
         </div>
       </div>
@@ -172,57 +116,6 @@ include "koneksi.php";
   </section>
 
   <!-- end about section -->
-
-  <!-- client section -->
-
-  <section class="client_section layout_padding-bottom">
-    <div class="container">
-      <div class="heading_container heading_center psudo_white_primary mb_45" style="margin-top: 50px">
-        <h2>Apa yang pengunjung katakan</h2>
-      </div>
-      <div class="carousel-wrap row">
-        <div class="owl-carousel client_owl-carousel">
-          <div class="item">
-            <div class="box">
-              <div class="detail-box">
-                <p>
-                  "Dapur Kita benar-benar menyelamatkan hidup saya! Sebagai
-                  ibu bekerja, saya selalu mencari resep yang cepat dan lezat.
-                  Dapur Kita tidak hanya memberikan resep yang mudah diikuti,
-                  tetapi juga memberikan tips yang bermanfaat. Terima kasih
-                  Dapur Kita!
-                </p>
-                <h6>Siti Rahma</h6>
-                <p>Jakarta</p>
-              </div>
-              <div class="img-box">
-                <img src="images/client1.jpg" alt="" class="box-img" />
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="box">
-              <div class="detail-box">
-                <p>
-                  Saya baru belajar memasak, dan Dapur Kita menjadi panduan
-                  terbaik saya. Resep-resepnya variatif, dan instruksinya
-                  sangat jelas. Saya bahkan berhasil membuat hidangan istimewa
-                  untuk ulang tahun istri saya. Puas sekali!
-                </p>
-                <h6>Andi Setiawan</h6>
-                <p>Surabaya</p>
-              </div>
-              <div class="img-box">
-                <img src="images/client2.jpg" alt="" class="box-img" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end client section -->
 
   <!-- footer section -->
   <footer class="footer_section">
