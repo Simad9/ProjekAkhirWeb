@@ -132,7 +132,7 @@ include "koneksi.php";
     </div>
 
     <div class="text-center btn-box">
-      <a href=""> Read More Recipe </a>
+      <a href="menu.php"> Read More Recipe </a>
     </div>
 
   </div>
