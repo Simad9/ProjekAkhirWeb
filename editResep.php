@@ -87,12 +87,14 @@ $data = mysqli_fetch_array($hasil);
 
                   <div class="w-100">
                     <h4 class="mt-2">Bahan-bahan :</h4>
-                    <textarea name="bahan_bahan" class="form-control border-black" placeholder="Bahan-bahan" style="height: 100px; resize: none"><?= $data['bahan_bahan'] ?></textarea>
+                    <!-- <textarea name="bahan_bahan" class="form-control border-black" placeholder="Bahan-bahan" style="height: 100px; resize: none"><?= $data['bahan_bahan'] ?></textarea> -->
+                    <textarea name="bahan_bahan" id="editor" class="form-control border-black" placeholder="Bahan-bahan" style="height: 100px; resize: none"><?= $data['bahan_bahan'] ?></textarea>
                   </div>
 
                   <div class="w-100">
                     <h4 class="mt-2">Cara Pembuatan :</h4>
-                    <textarea name="cara_pembuatan" class="form-control border-black" placeholder="Cara Pembuatan" style="height: 100px; resize: none"><?= $data['cara_pembuatan'] ?></textarea>
+                    <!-- <textarea name="cara_pembuatan" class="form-control border-black" placeholder="Cara Pembuatan" style="height: 100px; resize: none"><?= $data['cara_pembuatan'] ?></textarea> -->
+                    <textarea name="cara_pembuatan" id="editor" class="form-control border-black" placeholder="Cara Pembuatan" style="height: 100px; resize: none"><?= $data['cara_pembuatan'] ?></textarea>
                   </div>
 
 

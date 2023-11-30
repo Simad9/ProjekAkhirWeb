@@ -75,12 +75,14 @@ session_start();
 
                   <div class="w-100">
                     <h4 class="mt-2">Bahan-bahan :</h4>
-                    <textarea name="bahan_bahan" class="form-control border-black" placeholder="Bahan-bahan" style="height: 100px; resize: none"></textarea>
+                    <!-- <textarea name="bahan_bahan" class="form-control border-black" placeholder="Bahan-bahan" style="height: 100px; resize: none"></textarea> -->
+                    <textarea name="bahan_bahan" id="editor" class="form-control border-black" placeholder="Bahan-bahan" style="height: 100px; resize: none"></textarea>
                   </div>
 
                   <div class="w-100">
                     <h4 class="mt-2">Cara Pembuatan :</h4>
-                    <textarea name="cara_pembuatan" class="form-control border-black" placeholder="Cara Pembuatan" style="height: 100px; resize: none"></textarea>
+                    <!-- <textarea name="cara_pembuatan" class="form-control border-black" placeholder="Cara Pembuatan" style="height: 100px; resize: none"></textarea> -->
+                    <textarea name="cara_pembuatan" id="editor" class="form-control border-black" placeholder="Cara Pembuatan" style="height: 100px; resize: none"></textarea>
                   </div>
 
                   <div class="w-100 d-flex justify-content-center mt-4">

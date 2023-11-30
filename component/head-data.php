@@ -45,3 +45,13 @@
 
   <!-- ALPINE JS -->
   <script src="//unpkg.com/alpinejs" defer></script>
+
+  <!-- TINYMCE ~~ Textarea Editor -->
+  <!-- TinyMCE CDN -->
+  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+  <script>
+    tinymce.init({
+      selector: 'textarea#editor',
+    });
+  </script>
