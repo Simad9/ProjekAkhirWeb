@@ -41,7 +41,7 @@ include "koneksi.php";
                 <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="menu.php">Menu</a>
+                <a class="nav-link" href="menu.php">Resep</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="about.php">About</a>
@@ -234,7 +234,7 @@ include "koneksi.php";
       <div class="row">
         <div class="col-md-4 footer-col">
           <div class="footer_contact">
-            <h4>Contact Us</h4>
+            <h4>Hubungi Kami</h4>
             <div class="contact_link_box">
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>

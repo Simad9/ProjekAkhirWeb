@@ -64,7 +64,7 @@ session_start();
                 <a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="menuSudahLogin.php">Menu</a>
+                <a class="nav-link" href="menuSudahLogin.php">Resep</a>
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="#about">About</a>
@@ -129,7 +129,7 @@ session_start();
       <div class="row">
         <div class="col-md-4 footer-col">
           <div class="footer_contact">
-            <h4>Contact Us</h4>
+            <h4>Hubungi Kami</h4>
             <div class="contact_link_box">
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>

@@ -60,7 +60,7 @@ session_start();
                 <a class="nav-link" href="index.php">Home </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="menu.php">Menu</a>
+                <a class="nav-link" href="menu.php">Resep</a>
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="about.php">About <span class="sr-only">(current)</span>
@@ -124,7 +124,7 @@ session_start();
       <div class="row">
         <div class="col-md-4 footer-col">
           <div class="footer_contact">
-            <h4>Contact Us</h4>
+            <h4>Hubungi Kami</h4>
             <div class="contact_link_box">
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>

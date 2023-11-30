@@ -35,7 +35,7 @@ include "koneksi.php";
     <h1 class="my-2 text-putih fs-2">Dapur Kita</h1>
     <div class="d-flex gap-4">
       <a class="text-decoration-none text-light nav-item" href="homepage.php">Home</a>
-      <a class="text-decoration-none text-light nav-item" href="menuSudahLogin.php">Menu</a>
+      <a class="text-decoration-none text-light nav-item" href="menuSudahLogin.php">Resep</a>
     </div>
     <div class="d-flex justify-content-center align-items-center gap-3">
       <i class="bi bi-search fs-5 text-putih"></i>
@@ -127,7 +127,7 @@ include "koneksi.php";
       <div class="row">
         <div class="col-md-4 footer-col">
           <div class="footer_contact">
-            <h4>Contact Us</h4>
+            <h4>Hubungi Kami</h4>
             <div class="contact_link_box">
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>

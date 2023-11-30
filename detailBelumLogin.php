@@ -38,7 +38,7 @@ include "koneksi.php";
   <h1 class="my-2 text-putih fs-2">Dapur Kita</h1>
     <div class="d-flex gap-4">
       <a class="text-decoration-none text-light nav-item" href="index.php">Home</a>
-      <a class="text-decoration-none text-light nav-item" href="menu.php">Menu</a>
+      <a class="text-decoration-none text-light nav-item" href="menu.php">Resep</a>
     </div>
 
     <div class="user_option">
@@ -133,7 +133,7 @@ include "koneksi.php";
       <div class="row">
         <div class="col-md-4 footer-col">
           <div class="footer_contact">
-            <h4>Contact Us</h4>
+            <h4>Hubungi Kami</h4>
             <div class="contact_link_box">
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>

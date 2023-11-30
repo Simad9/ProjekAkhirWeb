@@ -14,7 +14,7 @@ include "koneksi.php";
   <meta name="description" content="" />
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/favicon.png" type="" />
-  <title>Dapur Kita | Menu</title>
+  <title>Dapur Kita | Resep</title>
 
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
@@ -45,7 +45,7 @@ include "koneksi.php";
                 <a class="nav-link" href="index.php">Home </a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="menu.php">Menu <span class="sr-only">(current)</span>
+                <a class="nav-link" href="menu.php">Resep <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item ">
@@ -120,7 +120,7 @@ include "koneksi.php";
       <div class="row">
         <div class="col-md-4 footer-col">
           <div class="footer_contact">
-            <h4>Contact Us</h4>
+            <h4>Hubungi Kami</h4>
             <div class="contact_link_box">
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
