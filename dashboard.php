@@ -28,9 +28,12 @@ include "koneksi.php";
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
   <!-- font awesome style -->
   <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/favicon.png" type="" />
 
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 </head>
@@ -41,7 +44,7 @@ include "koneksi.php";
     <!-- NAVBAR -->
     <div class="kiri col-3 bg-grey d-flex flex-column justify-content-center position-fixed h-100">
       <a href="homepage.php">
-        <h3 class="text-center text-putih mt-5 mb-4">Dapur Kita</h3>
+        <h1 class="text-center text-putih mt-5 mb-4">Dapur Kita</h1>
       </a>
       <div class="p-2 mt-2 d-flex flex-column justify-content-between h-100">
 
@@ -85,13 +88,11 @@ include "koneksi.php";
     <div class=" kanan col-9 bg-putih p-2 ">
 
       <!-- NAVIGATION PROFILE -->
-      <div class="profile d-flex justify-content-between kotakv2 shadow">
+      <div class="profile d-flex justify-content-between  align-items-center kotakv2 shadow p-3">
         <div class="d-flex justify-content-center align-items-center">
-          <h3 class="m-0">Selamat Datang, <?= $_SESSION['username'] ?> </h3>
+          <h2 class="m-0">Selamat Datang, <?= $_SESSION['username'] ?> </h2>
         </div>
-        <div class="akun d-flex gap-2 align-items-center justify-content-center me-2 ">
-          <img src="./img/profile/<?= $_SESSION['profilePicture'] ?>" class="profilePicture">
-        </div>
+        <img src="./img/profile/<?= $_SESSION['profilePicture'] ?>" class="profilePicture">
       </div>
       <!-- END NAVIGAION PROFILE -->
 
@@ -112,15 +113,16 @@ include "koneksi.php";
           <section class="food_section layout_padding d-inline-flex p-2">
             <div class="filters-content">
               <div class="row grid">
-                <div class="col-sm-6 col-lg-12 all pizza border">
+                <div class="col-sm-6 col-lg-12 all food ">
                   <div class="box">
-                    <div>
-                      <div class="img-box">
-                        <img src="./img/resep/<?= $row['foto']; ?>" alt="" />
-                      </div>
-                      <div class="detail-box">
-                        <h5><?= $row['judul']; ?></h5>
-                        <div class="d-flex justify-content-between px-3 py-2">
+                    <div class="img-box">
+                      <img src="./img/resep/<?= $row['foto']; ?>" alt="" />
+                    </div>
+                    <div class="detail-box">
+                      <h5 class="text-center"><?= $row['judul']; ?></h5>
+                      <!-- btn -->
+                      <div class="d-flex flex-column justify-content-center align-content-center gap-2">
+                        <div class="d-flex justify-content-center px-3 pt-2 gap-2">
                           <a href="./editResep.php?id_resep=<?= $row['id_resep']; ?>">
                             <button class="btn-manual">
                               <i class="bi bi-pencil-square"></i>
@@ -134,13 +136,24 @@ include "koneksi.php";
                             </button>
                           </a>
                         </div>
+                        <div class="d-flex justify-content-center px-3 gap-2">
+                          <a href="detail.php?id_resep=<?= $row['id_resep'] ?>">
+                            <button class="btn-cek">
+                              <i class="bi bi-clipboard"></i>
+                              Cek Resep
+                            </button>
+                          </a>
+                        </div>
+
+
+                        <!-- End - btn -->
                       </div>
                     </div>
-                  </div>
-                </div>
 
+                  </div>
+
+                </div>
               </div>
-            </div>
           </section>
         <?php } ?>
 

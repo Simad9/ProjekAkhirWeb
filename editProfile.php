@@ -16,7 +16,10 @@ session_start();
   </script>
   <!-- ICONS BOOTSTRAP -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.png" type="" />
   <!-- CSS -->
+  <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -26,7 +29,7 @@ session_start();
     <!-- NAVBAR -->
     <div class="kiri col-3 bg-grey d-flex flex-column justify-content-center position-fixed h-100">
       <a href="homepage.php">
-        <h3 class="text-center text-putih mt-5 mb-4">Dapur Kita</h3>
+        <h1 class="text-center text-putih mt-5 mb-4">Dapur Kita</h1>
       </a>
       <div class="p-2 mt-2 d-flex flex-column justify-content-between h-100">
 
@@ -73,7 +76,7 @@ session_start();
       <!-- NAVIGATION PROFILE -->
       <div class="profile d-flex justify-content-between kotakv2 shadow ">
         <div class="d-flex justify-content-center align-items-center">
-          <h3 class="m-0">Selamat Datang, <?= $_SESSION['username'] ?></h3>
+          <h2 class="m-0">Selamat Datang, <?= $_SESSION['username'] ?></h2>
         </div>
         <div class="akun d-flex gap-2 align-items-center justify-content-center me-2 ">
           <img src="./img/profile/<?= $_SESSION['profilePicture'] ?>" class=" profilePicture">

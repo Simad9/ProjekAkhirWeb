@@ -22,15 +22,18 @@ include "koneksi.php";
   </script>
   <!-- ICONS BOOTSTRAP -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/favicon.png" type="" />
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+  <link href="css/style.css" rel="stylesheet" />
 </head>
 
 <body>
   <!-- NAVBAR -->
   <nav class="navbar bg-grey py-2 px-5 shadow-lg d-flex align-items-center">
-    <h3 class="navbar-brand text-putih">Dapur Kita</h3>
-    <div class="d-flex gap-2">
+  <h1 class="my-2 text-putih fs-2">Dapur Kita</h1>
+    <div class="d-flex gap-4">
       <a class="text-decoration-none text-light nav-item" href="homepage.php">Home</a>
       <a class="text-decoration-none text-light nav-item" href="menuSudahLogin.php">Menu</a>
     </div>
@@ -63,26 +66,26 @@ include "koneksi.php";
   <section class="container d-flex flex-column gap-4 pt-4 pb-5">
     <img src="./img/resep/<?= $data['foto'] ?>" alt="Foto Resep" class="gambar-resep rounded-4 shadow-lg">
     <div class="kotak shadow">
-      <h4><?= $data['judul'] ?></h4>
+      <h2 class="fs-1"><?= $data['judul'] ?></h2>
       <p class="m-0">By. <?= $data['namaLengkap'] ?></p>
       <p class="m-0 pt-2"> <?= $data['deskripsi'] ?></p>
     </div>
     <div class="kotak shadow d-flex flex-column gap-1">
-      <h5>Bahan-bahan</h5>
+      <h2 class="fs-3">Bahan-bahan</h2>
       <div class="garis"></div>
       <p class="m-0">
         <?= $data['bahan_bahan'] ?>
       </p>
     </div>
     <div class="kotak shadow d-flex flex-column gap-1">
-      <h5>Cara Pembuatan</h5>
+      <h2 class="fs-3">Cara Pembuatan</h2>
       <div class="garis"></div>
       <p class="m-0">
         <?= $data['cara_pembuatan'] ?>
       </p>
     </div>
     <div class="kotak shadow">
-      <h5>Ditulis Oleh</h5>
+      <h2 class="fs-3">Ditulis Oleh</h2>
       <div class="garis"></div>
       <div class="d-flex gap-3 justify-content-start align-items-center mb-2">
         <img src="img/profile/<?= $data['profilePicture'] ?>" alt="" class="profileDitulis">
@@ -96,7 +99,7 @@ include "koneksi.php";
     </div>
     <div class="kotak shadow">
       <div class="d-flex justify-content-between align-items-center">
-        <h5>Resep lain dari penulis</h5>
+        <h2 class="fs-3">Resep lain dari penulis</h2>
         <i class="bi bi-arrow-right fs-3 fw-bold cursor-pointer cursor-pointer"></i>
       </div>
       <div class="garis"></div>

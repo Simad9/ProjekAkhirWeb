@@ -25,15 +25,18 @@ include "koneksi.php";
   </script>
   <!-- ICONS BOOTSTRAP -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/favicon.png" type="" />
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+  <link href="css/style.css" rel="stylesheet" />
 </head>
 
 <body>
   <!-- NAVBAR -->
   <nav class="navbar bg-grey py-2 px-5 shadow-lg d-flex align-items-center">
-    <h3 class="navbar-brand text-putih">Dapur Kita</h3>
-    <div class="d-flex gap-2">
+  <h1 class="my-2 text-putih fs-2">Dapur Kita</h1>
+    <div class="d-flex gap-4">
       <a class="text-decoration-none text-light nav-item" href="index.php">Home</a>
       <a class="text-decoration-none text-light nav-item" href="menu.php">Menu</a>
     </div>

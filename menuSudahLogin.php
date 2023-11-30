@@ -22,6 +22,8 @@ include "koneksi.php";
   <link href="css/font-awesome.min.css" rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet" />
   <link href="css/responsive.css" rel="stylesheet" />
+  <!-- CSS sendiri -->
+  <link href="style.css" rel="stylesheet" />
 </head>
 
 <body class="sub_page">

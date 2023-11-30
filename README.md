@@ -6,5 +6,5 @@ Membuat Website dengan bahasa PHP, disini kami mendapatkan tema "Kuliner" sehing
 
 ### To do (Yang masih belum) :
 
-- [ ] rapiin desain yang salah kecil kecil, seperti font, gambar di card, underline jika diklik
+- [x] rapiin desain yang salah kecil kecil, seperti font, gambar di card, underline jika diklik
 - [ ] Menyusun Laporan (hehe)
