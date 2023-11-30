@@ -36,6 +36,7 @@ include "koneksi.php";
     <div class="d-flex gap-4">
       <a class="text-decoration-none text-light nav-item" href="homepage.php">Home</a>
       <a class="text-decoration-none text-light nav-item" href="menuSudahLogin.php">Resep</a>
+      <a class="text-decoration-none text-light nav-item" href="aboutSudahLogin.php">Tentang Kami</a>
     </div>
     <div class="d-flex justify-content-center align-items-center gap-3">
       <i class="bi bi-search fs-5 text-putih"></i>

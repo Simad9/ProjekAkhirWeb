@@ -63,7 +63,7 @@ session_start();
                 <a class="nav-link" href="menu.php">Resep</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="about.php">About <span class="sr-only">(current)</span>
+                <a class="nav-link" href="about.php">Tentang Kami <span class="sr-only">(current)</span>
                 </a>
               </li>
             </ul>

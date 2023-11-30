@@ -67,7 +67,7 @@ session_start();
                 <a class="nav-link" href="menuSudahLogin.php">Resep</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="#about">About</a>
+                <a class="nav-link" href="#about">Tentang Kami</a>
               </li>
             </ul>
 

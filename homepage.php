@@ -49,7 +49,7 @@ include "koneksi.php";
                 <a class="nav-link" href="menuSudahLogin.php">Resep</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="aboutSudahLogin.php">About</a>
+                <a class="nav-link" href="aboutSudahLogin.php">Tentang Kami</a>
               </li>
             </ul>
 
@@ -76,7 +76,7 @@ include "koneksi.php";
               <div class="row">
                 <div class="col-md-7 col-lg-6">
                   <div class="detail-box">
-                    <h1>WELCOME</h1>
+                    <h1>Selamat Datang</h1>
                     <p style="text-align: justify">
                       Selamat datang di Dapur Kita, tempat di mana kreasi
                       kuliner menjadi keajaiban! Dapur Kita adalah sumber
@@ -106,7 +106,7 @@ include "koneksi.php";
     <div class="container">
 
       <div class="heading_container text-center">
-        <h2>Recipes</h2>
+        <h2>Resep - resep</h2>
       </div>
 
       <div class="row">
@@ -141,7 +141,7 @@ include "koneksi.php";
       </div>
 
       <div class="text-center btn-box">
-        <a href="menuSudahLogin.php">Lanjut Baca</a>
+        <a href="menuSudahLogin.php">Lihat Lainnya</a>
       </div>
 
     </div>
@@ -173,7 +173,7 @@ include "koneksi.php";
               tentang berbagai bahan makanan, Dapur Kita adalah panduan
               lengkap Anda.
             </p>
-            <a href="about.php"> Read More </a>
+            <a href="about.php"> Lanjut Baca </a>
           </div>
         </div>
       </div>

@@ -39,6 +39,7 @@ include "koneksi.php";
     <div class="d-flex gap-4">
       <a class="text-decoration-none text-light nav-item" href="index.php">Home</a>
       <a class="text-decoration-none text-light nav-item" href="menu.php">Resep</a>
+      <a class="text-decoration-none text-light nav-item" href="about.php">Tentang Kami</a>
     </div>
 
     <div class="user_option">

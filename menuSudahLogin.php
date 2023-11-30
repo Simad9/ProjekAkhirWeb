@@ -49,7 +49,7 @@ include "koneksi.php";
                 </a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link" href="aboutSudahLogin.php">About</span>
+                <a class="nav-link" href="aboutSudahLogin.php">Tentang Kami</span>
                 </a>
               </li>
             </ul>
@@ -79,7 +79,7 @@ include "koneksi.php";
     <div class="container">
 
       <div class="heading_container text-center">
-        <h2>Recipes</h2>
+        <h2>Resep - resep</h2>
       </div>
 
       <div class="row">
