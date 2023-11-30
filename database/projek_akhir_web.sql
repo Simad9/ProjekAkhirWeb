@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2023 at 09:06 AM
+-- Generation Time: Nov 30, 2023 at 10:12 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -80,7 +80,8 @@ INSERT INTO `users` (`id_user`, `username`, `email`, `password`, `headline`, `pr
 -- Indexes for table `resep`
 --
 ALTER TABLE `resep`
-  ADD PRIMARY KEY (`id_resep`);
+  ADD PRIMARY KEY (`id_resep`),
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- Indexes for table `users`
@@ -103,6 +104,16 @@ ALTER TABLE `resep`
 --
 ALTER TABLE `users`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `resep`
+--
+ALTER TABLE `resep`
+  ADD CONSTRAINT `resep_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
