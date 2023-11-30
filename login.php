@@ -14,8 +14,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
   <!-- ALPINE JS -->
   <script src="//unpkg.com/alpinejs" defer></script>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicon.png" type="" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/favicon.png" type="" />
   <!-- CSS -->
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="style.css">
@@ -42,7 +42,7 @@
           if ($_GET["pesan"] == "berhasil") {
             echo "<script>alert('Akun berhasil Terdaftar')</script>";
           } else if ($_GET["pesan"] == "gagal") {
-            echo "<script>alert('Terjadi kesalahan')</script>";
+            echo "<script>alert('Email dan Password salah')</script>";
           } else if ($_GET["pesan"] == "keluar") {
             echo "<script>alert('Berhasil Keluar')</script>";
           } else if ($_GET["pesan"] == "terdaftar") {

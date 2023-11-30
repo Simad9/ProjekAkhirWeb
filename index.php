@@ -118,8 +118,12 @@ include "koneksi.php";
                   <img src="./img/resep/<?= $row['foto'] ?>" alt="" />
                 </div>
                 <div class="detail-box">
-                  <h5><?= $row['judul'] ?></h5>
-                  <p><?= $row['deskripsi'] ?></p>
+                  <h5 class="text-center"><?= $row['judul'] ?></h5>
+
+                  <div class="truncate-line-clamp">
+                    <p><?= $row['deskripsi'] ?></p>
+                  </div>
+
                   <div class="btn-box">
                     <a href="detailBelumLogin.php?id_resep=<?= $row['id_resep'] ?>" class="btn1"> Lanjut Baca </a>
                   </div>
@@ -132,7 +136,7 @@ include "koneksi.php";
       </div>
 
       <div class="text-center btn-box">
-        <a href="menu.php"> Read More Recipe </a>
+        <a href="menu.php">Lanjut Baca</a>
       </div>
 
     </div>

@@ -32,7 +32,7 @@ include "koneksi.php";
 <body>
   <!-- NAVBAR -->
   <nav class="navbar bg-grey py-2 px-5 shadow-lg d-flex align-items-center">
-  <h1 class="my-2 text-putih fs-2">Dapur Kita</h1>
+    <h1 class="my-2 text-putih fs-2">Dapur Kita</h1>
     <div class="d-flex gap-4">
       <a class="text-decoration-none text-light nav-item" href="homepage.php">Home</a>
       <a class="text-decoration-none text-light nav-item" href="menuSudahLogin.php">Menu</a>
@@ -49,10 +49,8 @@ include "koneksi.php";
   <!-- Main Section -->
   <?php
   $id_resep = $_GET["id_resep"];
-  $id_user = $_SESSION['id_user'];
 
-  $query = "SELECT * FROM users u, resep r WHERE u.id_user = r.id_user AND r.id_resep = $id_resep AND r.id_user = $id_user";
-
+  $query = "SELECT * FROM users u, resep r WHERE u.id_user = r.id_user AND r.id_resep = $id_resep";
 
   $hasil = mysqli_query($konek, $query);
 
@@ -100,20 +98,22 @@ include "koneksi.php";
     <div class="kotak shadow">
       <div class="d-flex justify-content-between align-items-center">
         <h2 class="fs-3">Resep lain dari penulis</h2>
-        <i class="bi bi-arrow-right fs-3 fw-bold cursor-pointer cursor-pointer"></i>
+        <i class="bi bi-arrow-right fs-3 fw-bold cursor-pointer "></i>
       </div>
       <div class="garis"></div>
       <div class="d-flex flex-wrap gap-3">
         <?php
         $id_user = $data['id_user'];
-        $query = "SELECT foto, judul FROM resep WHERE id_user = $id_user";
+        $query = "SELECT id_resep, foto, judul FROM resep WHERE id_user = $id_user";
         $hasil = mysqli_query($konek, $query);
         while ($resep = mysqli_fetch_array($hasil)) :
         ?>
-          <div class="bg-grey border-radius-15px">
-            <img src="img/resep/<?= $resep['foto'] ?>" alt="" class="gambar-card">
-            <p class="my-1 py-1 text-wrap text-center text-putih"><?= $resep['judul'] ?></p>
-          </div>
+          <a href="detail.php?id_resep=<?= $resep['id_resep'] ?>">
+            <div class="bg-grey border-radius-15px">
+              <img src="img/resep/<?= $resep['foto'] ?>" alt="" class="gambar-card">
+              <p class="my-1 py-1 text-wrap text-center text-putih"><?= $resep['judul'] ?></p>
+            </div>
+          </a>
         <?php endwhile; ?>
 
       </div>

@@ -22,6 +22,8 @@ include "koneksi.php";
   <link href="css/font-awesome.min.css" rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet" />
   <link href="css/responsive.css" rel="stylesheet" />
+  <!-- CSS sendiri -->
+  <link href="style.css" rel="stylesheet" />
 </head>
 
 <body class="sub_page">
@@ -90,8 +92,12 @@ include "koneksi.php";
                   <img src="./img/resep/<?= $row['foto'] ?>" alt="" />
                 </div>
                 <div class="detail-box">
-                  <h5><?= $row['judul'] ?></h5>
-                  <p><?= $row['deskripsi'] ?></p>
+                  <h5 class="text-center"><?= $row['judul'] ?></h5>
+
+                  <div class="truncate-line-clamp">
+                    <p><?= $row['deskripsi'] ?></p>
+                  </div>
+
                   <div class="btn-box">
                     <a href="detailBelumLogin.php?id_resep=<?= $row['id_resep'] ?>" class="btn1"> Lanjut Baca </a>
                   </div>
@@ -101,10 +107,6 @@ include "koneksi.php";
 
           </div>
         <?php } ?>
-      </div>
-
-      <div class="text-center btn-box">
-        <a href=""> View More </a>
       </div>
 
     </div>

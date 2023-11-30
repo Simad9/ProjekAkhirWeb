@@ -290,3 +290,19 @@ input[type="file"]::file-selector-button:hover {
 .w-40 {
   width: 40%;
 }
+
+/* Tructcate text */
+.truncate-ellipsis p {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.truncate-line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  width: 100%;
+  overflow: hidden;
+}
