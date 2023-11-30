@@ -176,7 +176,7 @@ include "koneksi.php";
       </div>
       <div class="footer-info">
         <p>
-          &copy; <span id="displayYear"></span> Created by
+          &copy; <span id="displayYear"></span> Dibuat oleh
           <a href="https://themewagon.com/" target="_blank">Dapur Kita</a>
         </p>
       </div>
