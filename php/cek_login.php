@@ -3,14 +3,6 @@ session_start();
 // menghubungkan dengan koneksi
 $konek = new mysqli('localhost', 'root', '', 'projek_akhir_web');
 
-// Check connection
-if ($konek->connect_error) {
-    die("Connection failed: " . $konek->connect_error);
-}
-
-if (!(isset($_POST["username"]) && isset($_POST["password"]))) {
-    header("location:../login.php?pesan=gagal");
-}
 
 // menangkap data yang dikirim dari form
 $username = htmlspecialchars($_POST["username"]);

@@ -11,24 +11,10 @@ $hasil = mysqli_query($konek, $query);
 $data = mysqli_fetch_array($hasil);
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
+<?php require './component/head-data.php' ?>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Edit Resep</title>
-
-  <!-- BOOTSTRAP -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <!-- ICONS BOOTSTRAP -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicon.png" type="" />
-  <!-- CSS -->
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style.css" />
+<title>Edit Resep</title>
 </head>
 
 <body>
@@ -64,93 +50,65 @@ $data = mysqli_fetch_array($hasil);
           <div class="d-flex justify-content-center align-items-end gap-2 item-navigation">
             <i class="bi bi-box-arrow-in-right fs-3"></i>
             <h4>Keluar</h4>
-          </div>
-        </a>
-      </div>
-    </div>
-    <!-- END NAVBAR -->
-    <!-- KIRI TIPUAN -->
-    <div class="kiri-tipuan col-3 h-100"></div>
-    <!-- END KIRI TIPUAN -->
 
-    <!-- KANAN -->
-    <div class="kanan col-9 bg-putih p-2">
-      <!-- NAVIGATION PROFILE -->
-      <div class="profile d-flex justify-content-between kotakv2 shadow">
-        <div class="d-flex justify-content-center align-items-center">
-          <h2 class="m-0">Selamat Datang, <?= $_SESSION['username'] ?></h2>
-        </div>
-        <div class="akun d-flex gap-2 align-items-center justify-content-center me-2">
-          <img src="./img/profile/<?= $_SESSION['profilePicture'] ?>" class="profilePicture">
-        </div>
-      </div>
-      <!-- END NAVIGAION PROFILE -->
-
-      <!-- MAIN -->
-      <div class="wadah kotakv3 shadow">
-        <div class="mx-2 mt-2">
-          <h2>Edit Resep</h2>
-          <div class="garis"></div>
-        </div>
-
-        <!-- CONTAIN -->
-        <form action="./php/update.php" method="post" enctype="multipart/form-data">
-          <div class="resep d-flex flex-wrap justify-content-start gap-2 mx-2">
-            <div class="w-75 d-flex flex-column align-items-start">
-              <div class="d-flex justify-content-center align-items-center">
-                <h4 class="mt-2">Gambar Makanan :</h4>
-                <div>
-                  <input id="file-upload" name="foto" type="file" accept="image/*" onchange="loadFile(event)" class="ms-3" />
-                </div>
+            <?php require './component/dashProfile.php' ?>
+            <!-- MAIN -->
+            <div class="wadah kotakv3 shadow">
+              <div class="mx-2 mt-2">
+                <h2>Edit Resep</h2>
+                <div class="garis"></div>
               </div>
-              <img src="./img/resep/<?= $data['foto'] ?>" id="imageView" class="bg-secondary gambar-resep-prev mt-2 rounded-4" />
+
+              <!-- CONTAIN -->
+              <form action="./php/update.php" method="post" enctype="multipart/form-data">
+                <div class="resep d-flex flex-wrap justify-content-start gap-2 mx-2">
+                  <div class="w-75 d-flex flex-column align-items-start">
+                    <div class="d-flex justify-content-center align-items-center">
+                      <h4 class="mt-2">Gambar Makanan :</h4>
+                      <div>
+                        <input id="file-upload" name="foto" type="file" accept="image/*" onchange="loadFile(event)" class="ms-3" />
+                      </div>
+                    </div>
+                    <img src="./img/resep/<?= $data['foto'] ?>" id="imageView" class="bg-secondary gambar-resep-prev mt-2 rounded-4" />
+                  </div>
+
+                  <input type="hidden" name="gambarLama" value="<?= $data['foto'] ?>">
+                  <input type="hidden" name="id_resep" value="<?= $data['id_resep'] ?>">
+
+                  <div class="w-100">
+                    <h4 class="mt-2">Judul Makanan :</h4>
+                    <input type="text" name="judul" value="<?= $data['judul'] ?>" class="form-control border-black" placeholder="Judul Makanan" />
+                  </div>
+
+                  <div class="w-100">
+                    <h4 class="mt-2">Deskripsi Singkat :</h4>
+                    <textarea name="deskripsi" value="<?= $data['deskripsi'] ?>" class="form-control border-black" placeholder="Deskripsi singkat" style="height: 100px; resize: none"><?= $data['deskripsi'] ?></textarea>
+                  </div>
+
+                  <div class="w-100">
+                    <h4 class="mt-2">Bahan-bahan :</h4>
+                    <textarea name="bahan_bahan" class="form-control border-black" placeholder="Bahan-bahan" style="height: 100px; resize: none"><?= $data['bahan_bahan'] ?></textarea>
+                  </div>
+
+                  <div class="w-100">
+                    <h4 class="mt-2">Cara Pembuatan :</h4>
+                    <textarea name="cara_pembuatan" class="form-control border-black" placeholder="Cara Pembuatan" style="height: 100px; resize: none"><?= $data['cara_pembuatan'] ?></textarea>
+                  </div>
+
+
+
+                  <div class="w-100 d-flex justify-content-center mt-4">
+                    <button type="submit" class="btn-manual">Kirim</button>
+                  </div>
+                </div>
+              </form>
+              <!-- END CONTAIN -->
             </div>
-
-            <input type="hidden" name="gambarLama" value="<?= $data['foto'] ?>">
-            <input type="hidden" name="id_resep" value="<?= $data['id_resep'] ?>">
-
-            <div class="w-100">
-              <h4 class="mt-2">Judul Makanan :</h4>
-              <input type="text" name="judul" value="<?= $data['judul'] ?>" class="form-control border-black" placeholder="Judul Makanan" />
-            </div>
-
-            <div class="w-100">
-              <h4 class="mt-2">Deskripsi Singkat :</h4>
-              <textarea name="deskripsi" value="<?= $data['deskripsi'] ?>" class="form-control border-black" placeholder="Deskripsi singkat" style="height: 100px; resize: none"><?= $data['deskripsi'] ?></textarea>
-            </div>
-
-            <div class="w-100">
-              <h4 class="mt-2">Bahan-bahan :</h4>
-              <textarea name="bahan_bahan" class="form-control border-black" placeholder="Bahan-bahan" style="height: 100px; resize: none"><?= $data['bahan_bahan'] ?></textarea>
-            </div>
-
-            <div class="w-100">
-              <h4 class="mt-2">Cara Pembuatan :</h4>
-              <textarea name="cara_pembuatan" class="form-control border-black" placeholder="Cara Pembuatan" style="height: 100px; resize: none"><?= $data['cara_pembuatan'] ?></textarea>
-            </div>
-
-
-
-            <div class="w-100 d-flex justify-content-center mt-4">
-              <button type="submit" class="btn-manual">Kirim</button>
-            </div>
+            <!-- END MAIN -->
           </div>
-        </form>
-        <!-- END CONTAIN -->
-      </div>
-      <!-- END MAIN -->
-    </div>
   </section>
 
-  <script>
-    var loadFile = function(event) {
-      var output = document.getElementById("imageView");
-      output.src = URL.createObjectURL(event.target.files[0]);
-      output.onload = function() {
-        URL.revokeObjectURL(output.src); // free memory
-      };
-    };
-  </script>
+  <script src="js/previewImg.js"></script>
 </body>
 
 </html>

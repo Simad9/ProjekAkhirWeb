@@ -14,8 +14,8 @@ $id_user = $_SESSION["id_user"];
 // menangkap data yang dikirim dari form
 $judul = htmlspecialchars($_POST["judul"]);
 $deskripsi = htmlspecialchars($_POST["deskripsi"]);
-$bahan_bahan = htmlspecialchars($_POST["bahan_bahan"]);
-$cara_pembuatan = htmlspecialchars($_POST["cara_pembuatan"]);
+$bahan_bahan = $_POST["bahan_bahan"];
+$cara_pembuatan = $_POST["cara_pembuatan"];
 
 // ----- FOTO -------
 $namaFile = $_FILES['foto']['name'];

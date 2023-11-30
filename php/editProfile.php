@@ -3,11 +3,6 @@ session_start();
 // menghubungkan dengan koneksi
 $konek = new mysqli('localhost', 'root', '', 'projek_akhir_web');
 
-// Check connection
-if ($konek->connect_error) {
-  die("Connection failed: " . $konek->connect_error);
-}
-
 // Ambil id_user dari session
 $id_user = $_SESSION["id_user"];
 

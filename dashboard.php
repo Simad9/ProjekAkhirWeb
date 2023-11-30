@@ -1,41 +1,11 @@
 <?php
 session_start();
-include "koneksi.php";
+$konek = new mysqli('localhost', 'root', '', 'projek_akhir_web');
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<?php require './component/head-data.php' ?>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
-
-  <!-- BOOTSTRAP -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-  </script>
-  <!-- ICONS BOOTSTRAP -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-
-  <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <!-- nice select  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
-  <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="images/favicon.png" type="" />
-
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css">
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+<title>Dashboard</title>
 </head>
 
 <body>
@@ -50,7 +20,7 @@ include "koneksi.php";
 
         <div class="tempat-nav-item d-flex flex-column gap-1">
           <a class="text-decoration-none" href="dashboard.php">
-            <div class="d-flex justify-content-start align-items-end gap-2 item-navigation active px-3 cursor-pointe">
+            <div class="d-flex justify-content-start align-items-end gap-2 item-navigation  px-3 cursor-pointer active">
               <i class="bi bi-grid fs-3"></i>
               <h4>Resep Saya</h4>
             </div>
@@ -73,114 +43,76 @@ include "koneksi.php";
           <div class="d-flex justify-content-center align-items-end gap-2 item-navigation">
             <i class="bi bi-box-arrow-in-right fs-3 "></i>
             <h4>Keluar</h4>
-          </div>
-        </a>
 
-      </div>
-    </div>
-    <!-- END NAVBAR -->
-    <!-- KIRI TIPUAN -->
-    <div class="kiri-tipuan col-3 h-100">
-    </div>
-    <!-- END KIRI TIPUAN -->
+            <?php require './component/dashProfile.php' ?>
 
-    <!-- KANAN -->
-    <div class=" kanan col-9 bg-putih p-2 ">
+            <!-- MAIN -->
+            <div class="wadah kotakv3 shadow ">
+              <div class="mx-2 mt-2">
+                <h2>Resep Saya</h2>
+                <div class="garis"></div>
+              </div>
 
-      <!-- NAVIGATION PROFILE -->
-      <div class="profile d-flex justify-content-between  align-items-center kotakv2 shadow p-3">
-        <div class="d-flex justify-content-center align-items-center">
-          <h2 class="m-0">Selamat Datang, <?= $_SESSION['username'] ?> </h2>
-        </div>
-        <img src="./img/profile/<?= $_SESSION['profilePicture'] ?>" class="profilePicture">
-      </div>
-      <!-- END NAVIGAION PROFILE -->
+              <!-- CONTAIN -->
+              <?php
+              $id_user = $_SESSION["id_user"];
+              $query = mysqli_query($konek, "SELECT * FROM resep WHERE id_user = $id_user");
+              while ($row = mysqli_fetch_array($query)) {
+              ?>
 
-      <!-- MAIN -->
-      <div class="wadah kotakv3 shadow ">
-        <div class="mx-2 mt-2">
-          <h2>Resep Saya</h2>
-          <div class="garis"></div>
-        </div>
+                <section class="food_section layout_padding d-inline-flex p-2">
+                  <div class="filters-content">
+                    <div class="row grid">
+                      <div class="col-sm-6 col-lg-12 all food ">
+                        <div class="box">
+                          <div class="img-box">
+                            <img src="./img/resep/<?= $row['foto']; ?>" alt="" />
+                          </div>
+                          <div class="detail-box">
+                            <h5 class="text-center"><?= $row['judul']; ?></h5>
+                            <!-- btn -->
+                            <div class="d-flex flex-column justify-content-center align-content-center gap-2">
+                              <div class="d-flex justify-content-center px-3 pt-2 gap-2">
+                                <a href="./editResep.php?id_resep=<?= $row['id_resep']; ?>">
+                                  <button class="btn-manual">
+                                    <i class="bi bi-pencil-square"></i>
+                                    Edit
+                                  </button>
+                                </a>
+                                <a href="./php/hapus.php?id_resep=<?= $row['id_resep']; ?>">
+                                  <button class="btn-hapus">
+                                    <i class="bi bi-trash"></i>
+                                    Hapus
+                                  </button>
+                                </a>
+                              </div>
+                              <div class="d-flex justify-content-center px-3 gap-2">
+                                <a href="detail.php?id_resep=<?= $row['id_resep'] ?>">
+                                  <button class="btn-cek">
+                                    <i class="bi bi-clipboard"></i>
+                                    Cek Resep
+                                  </button>
+                                </a>
+                              </div>
 
-        <!-- CONTAIN -->
-        <?php
-        $id_user = $_SESSION["id_user"];
-        $query = mysqli_query($konek, "SELECT * FROM resep WHERE id_user = $id_user");
-        while ($row = mysqli_fetch_array($query)) {
-        ?>
+                              <!-- End - btn -->
+                            </div>
+                          </div>
 
-          <section class="food_section layout_padding d-inline-flex p-2">
-            <div class="filters-content">
-              <div class="row grid">
-                <div class="col-sm-6 col-lg-12 all food ">
-                  <div class="box">
-                    <div class="img-box">
-                      <img src="./img/resep/<?= $row['foto']; ?>" alt="" />
-                    </div>
-                    <div class="detail-box">
-                      <h5 class="text-center"><?= $row['judul']; ?></h5>
-                      <!-- btn -->
-                      <div class="d-flex flex-column justify-content-center align-content-center gap-2">
-                        <div class="d-flex justify-content-center px-3 pt-2 gap-2">
-                          <a href="./editResep.php?id_resep=<?= $row['id_resep']; ?>">
-                            <button class="btn-manual">
-                              <i class="bi bi-pencil-square"></i>
-                              Edit
-                            </button>
-                          </a>
-                          <a href="./php/hapus.php?id_resep=<?= $row['id_resep']; ?>">
-                            <button class="btn-hapus">
-                              <i class="bi bi-trash"></i>
-                              Hapus
-                            </button>
-                          </a>
-                        </div>
-                        <div class="d-flex justify-content-center px-3 gap-2">
-                          <a href="detail.php?id_resep=<?= $row['id_resep'] ?>">
-                            <button class="btn-cek">
-                              <i class="bi bi-clipboard"></i>
-                              Cek Resep
-                            </button>
-                          </a>
                         </div>
 
-
-                        <!-- End - btn -->
                       </div>
                     </div>
+                </section>
+              <?php } ?>
 
-                  </div>
-
-                </div>
-              </div>
-          </section>
-        <?php } ?>
-
-        <!-- END CONTAIN -->
-      </div>
-      <!-- END MAIN -->
-    </div>
+              <!-- END CONTAIN -->
+            </div>
+            <!-- END MAIN -->
+          </div>
   </section>
 
 
-  <!-- jQery -->
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <!-- popper js -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
-  <!-- owl slider -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <!-- isotope js -->
-  <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
-  <!-- nice select -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
-  <!-- custom js -->
-  <script src="js/custom.js"></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
-  <!-- End Google Map -->
 </body>
 
 </html>

@@ -2,12 +2,12 @@
 session_start();
 $konek = new mysqli('localhost', 'root', '', 'projek_akhir_web');
 
-$id_resep = $_POST["id_resep"];
-$judul = $_POST["judul"];
-$deskripsi = $_POST["deskripsi"];
+$id_resep = htmlspecialchars($_POST["id_resep"]);
+$judul = htmlspecialchars($_POST["judul"]);
+$deskripsi = htmlspecialchars($_POST["deskripsi"]);
 $bahan_bahan = $_POST["bahan_bahan"];
 $cara_pembuatan = $_POST["cara_pembuatan"];
-$id_user = $_SESSION['id_user'];
+$id_user = htmlspecialchars($_SESSION['id_user']);
 
 $gambarLama = htmlspecialchars($_POST["gambarLama"]);
 // cek apakah user pilih gambar baru atau tidak

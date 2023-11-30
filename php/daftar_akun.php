@@ -2,9 +2,9 @@
 $konek = new mysqli('localhost', 'root', '', 'projek_akhir_web');
 
 // Ngambil data
-$username = $_POST["username"];
-$password = $_POST["password"];
-$password2 = $_POST["password2"];
+$username = htmlspecialchars($_POST["username"]);
+$password = htmlspecialchars($_POST["password"]);
+$password2 = htmlspecialchars($_POST["password2"]);
 
 // cek username sudah ada atau belum
 $result = mysqli_query($konek, "SELECT username FROM users WHERE username = '$username'");
