@@ -1,6 +1,7 @@
 <?php
 session_start();
 $konek = new mysqli('localhost', 'root', '', 'projek_akhir_web'); ?>
+<?php require './php/session.php' ?>
 <?php require './component/head-data.php' ?>
 
 <title>Detail</title>
