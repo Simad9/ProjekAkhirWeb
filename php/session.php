@@ -2,5 +2,5 @@
 session_start();
 
 if (!isset($_SESSION['username'])) {
-  header('location:../login.php?pesan=belum');
+  header('location:./login.php?pesan=belum');
 }
