@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 $konek = new mysqli('localhost', 'root', '', 'projek_akhir_web'); ?>
 <?php require './component/head-data.php' ?>
 
@@ -24,5 +24,5 @@ $konek = new mysqli('localhost', 'root', '', 'projek_akhir_web'); ?>
       </form>
       <a href="login.php" class="order_online"> Login </a>
     </div>
-    <?php require './component/detailContent.php' ?>
+    <?php require './component/detailContentTwo.php' ?>
     <?php require './component/footer-data.php' ?>

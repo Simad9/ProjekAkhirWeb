@@ -65,7 +65,7 @@
         $hasil = mysqli_query($konek, $query);
         while ($resep = mysqli_fetch_array($hasil)) :
         ?>
-         <a href="detail.php?id_resep=<?= $resep['id_resep'] ?>">
+         <a href="detailBelumLogin.php?id_resep=<?= $resep['id_resep'] ?>">
            <div class="bg-grey border-radius-15px">
              <img src="img/resep/<?= $resep['foto'] ?>" alt="" class="gambar-card">
              <p class="my-1 py-1 text-wrap text-center text-putih"><?= $resep['judul'] ?></p>
