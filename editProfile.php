@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-
+<?php require './php/session.php' ?>
 <?php require './component/head-data.php' ?>
 
 <title>Edit Profile</title>

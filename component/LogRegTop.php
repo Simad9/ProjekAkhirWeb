@@ -24,6 +24,8 @@
             echo "<script>alert('Berhasil Keluar')</script>";
           } else if ($_GET["pesan"] == "terdaftar") {
             echo "<script>alert('Sudah Terdaftar')</script>";
+          } else if ($_GET["pesan"] == "belum") {
+            echo "<script>alert('Anda belum login')</script>";
           }
         }
         ?>

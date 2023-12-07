@@ -11,6 +11,7 @@ $hasil = mysqli_query($konek, $query);
 $data = mysqli_fetch_array($hasil);
 
 ?>
+<?php require './php/session.php' ?>
 <?php require './component/head-data.php' ?>
 
 <link rel="stylesheet" href="style.css" />
